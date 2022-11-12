@@ -1,0 +1,27 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, size TEXT, sex TEXT, quantity INTEGER);
+
+--Insert different variations of Shirt, Jeans, and Underwear
+INSERT INTO store VALUES
+(1, 'Shirt', 'XL', 'M', 12),
+(2, 'Shirt', 'L', 'M', 10),
+(3, 'Shirt', 'XL', 'F', 12),
+(4, 'Shirt', 'S', 'M', 4),
+(5, 'Shirt', 'M', 'F', 16),
+(6, 'Jeans', 'XL', 'M', 12),
+(7, 'Jeans', 'L', 'M', 10),
+(8, 'Jeans', 'XL', 'F', 12),
+(9, 'Jeans', 'S', 'M', 4),
+(10, 'Jeans', 'M', 'F', 16),
+(11, 'Underwear', 'XL', 'M', 12),
+(12, 'Underwear', 'L', 'M', 10),
+(13, 'Underwear', 'XL', 'F', 12),
+(14, 'Underwear', 'S', 'M', 4),
+(15, 'Underwear', 'XL', 'M', 12);
+
+--Display the database, ordered by quantity ascending
+SELECT * FROM store ORDER BY quantity asc;
+
+--Display the total quantity of Underwear
+Select item, SUM(quantity) "Total Quantity" FROM store WHERE item = 'Underwear';
